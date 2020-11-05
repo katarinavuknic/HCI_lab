@@ -1,7 +1,19 @@
 import React from 'react'
  
-  import styles from './style.module.css' 
+import { languages } from '../../constants/const'
+import ComboboxItem from './ComboboxItem'
+import styles from './style.module.css' 
  
-  const Combobox = () => <span className={styles.combobox}>English</span>
- 
-  export default Combobox
+const Combobox = () => (
+    <div className={styles.combobox}>
+        {<ul>
+          {languages.map(({language, name, flag}) => 
+            <ComboboxItem language={language}
+              name={name} 
+              flag={flag} />)}
+        </ul>
+        }
+    </div>
+  )
+export default Combobox
+
